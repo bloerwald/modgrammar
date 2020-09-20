@@ -9,7 +9,7 @@ import modgrammar
 
 PARSEERROR_FOUNDTXT_LEN = 16
 
-EOL_CHARS = '\r\n\f\v\u0085\u2028\u2029'
+EOL_CHARS = u'\r\n\f\v\u0085\u2028\u2029'
 EOL_RE = re.compile('\r\n|\n\r|[' + EOL_CHARS + ']')
 
 def update_best_error(current_best, err):

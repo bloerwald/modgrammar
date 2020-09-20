@@ -1551,18 +1551,18 @@ class Word (Terminal):
     if startchars == '^':
       startchars = r'\^'
     else:
-      startchars = "[{}]".format(startchars)
+      startchars = u"[{}]".format(startchars)
     if restchars == '^':
       restchars = '\\^'
     else:
-      restchars = "[{}]".format(restchars)
+      restchars = u"[{}]".format(restchars)
     max = cls.grammar_max
     if not max:
-      regexp = "{}{}*".format(startchars, restchars)
+      regexp = u"{}{}*".format(startchars, restchars)
     else:
-      regexp = "{}{}{{,{}}}".format(startchars, restchars, max-1)
+      regexp = u"{}{}{{,{}}}".format(startchars, restchars, max-1)
     if cls.grammar_min < 1:
-      regexp = "({})?".format(regexp)
+      regexp = u"({})?".format(regexp)
     cls.regexp = re.compile(regexp)
     if "grammar_name" not in attrs:
       if cls.restchars is None:
