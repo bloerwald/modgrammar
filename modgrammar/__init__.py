@@ -1,5 +1,6 @@
 # vi:et:ts=2:sw=2
 
+import six
 import sys
 import re
 import textwrap
@@ -587,7 +588,8 @@ class GrammarParser:
 #                            Base (public) Classes                            #
 ###############################################################################
 
-class Grammar (metaclass=GrammarClass):
+@six.add_metaclass(GrammarClass)
+class Grammar (object):
   """
   This class is not intended to be instantiated directly.  Instead, it is a base class to be used for defining your own custom grammars.
 
